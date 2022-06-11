@@ -16,12 +16,30 @@ function processOrder(Order){
 }
 
 
-placeOrder('coffee').then(function(orderFromCustomer){
-    console.log(`Request Recived !`);
-    let orderIsProcessed = processOrder(orderFromCustomer);
-    return orderIsProcessed;
-}).then(function(orderIsProcessed){
-    console.log(orderIsProcessed);
-}).catch(function(err){
-    console.log(err);
-})
+// placeOrder('coffee').then(function(orderFromCustomer){
+//     console.log(`Request Recived !`);
+//     let orderIsProcessed = processOrder(orderFromCustomer);
+//     return orderIsProcessed;
+// }).then(function(orderIsProcessed){
+//     console.log(orderIsProcessed);
+// }).catch(function(err){
+//     console.log(err);
+// })
+
+
+
+
+// Same Problem with Async Await
+// Async Await -> Clean version of Promises , works same as Promises
+async function serveOrder(){
+    try{
+        const orderReceived = await placeOrder('coffee');
+        console.log(`Order Received`);
+        const processedOrder =await processOrder(orderReceived);
+        console.log(processedOrder);
+    }catch(err){
+        console.log(err);
+    }
+}
+
+serveOrder();
