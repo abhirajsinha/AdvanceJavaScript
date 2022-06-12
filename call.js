@@ -72,6 +72,29 @@ we pass arguments in the apply func in a Array`
 */
 
 
+// let person1 = {
+//     name:'Aman',
+//     age: 25,
+// }
+
+// let person2 = {
+//     name:'Steve',
+//     age:20
+// }
+
+// let showDetails = function(city, car){
+//     console.log(`${this.name} is ${this.age} years old, he lives in ${city} and he drives ${car}`);
+// }
+
+// showDetails.apply(person2, ["Hyderabad", "Mercedes"]);
+
+
+/*
+`Bind Function` : `Make a copy of the function and stores it
+                    It will not call the function immideatily 
+`
+*/
+
 let person1 = {
     name:'Aman',
     age: 25,
@@ -86,4 +109,6 @@ let showDetails = function(city, car){
     console.log(`${this.name} is ${this.age} years old, he lives in ${city} and he drives ${car}`);
 }
 
-showDetails.apply(person2, ["Hyderabad", "Mercedes"]);
+let showDetailsBind = showDetails.bind(person2, "Hyderabad", "Mercedes");
+console.log("Bounded Fucnion: ", showDetailsBind);
+showDetailsBind();
