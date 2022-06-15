@@ -3,6 +3,11 @@ function car(brand,model,color){
     this.Model=model;
     this.Color=color;
 
+
+    this.drive = function(){
+        console.log(`I am driving my love`, this.Model);
+    }
+
     // console.log(this.Brand,this.Model,this.Color);
 }
 
@@ -19,3 +24,6 @@ console.log(car1);
 
 car2.Color="Midnight Black";
 console.log(car2.Color);
+
+//call function for any object
+car1.drive();
