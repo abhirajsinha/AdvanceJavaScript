@@ -11,3 +11,11 @@ let car2=new car("Audi","L3","Red");
 
 console.log(car1);
 console.log(car2);
+
+//Modify in object
+car1.Brand="Mercedes";
+console.log(car1);
+
+
+car2.Color="Midnight Black";
+console.log(car2.Color);
