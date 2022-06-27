@@ -23,5 +23,3 @@ counter1.incrementCounter();
 counter1.incrementCounter();
 counter1.decrementCounter();
 counter1.decrementCounter();
-
-
